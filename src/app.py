@@ -10,7 +10,7 @@ ask = Ask(app, '/bot')
 def tellrules():
     return statement(rules)
 
-@ask.intent('GetTrashMan', mapping={'date' : 'Date'})
+@ask.intent('GetTrashMan')
 def trashquery(date):
     if date == None:
         day = datetime.now().day
