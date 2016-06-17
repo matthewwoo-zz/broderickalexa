@@ -10,12 +10,12 @@ ask = Ask(app, '/bot')
 def tellrules():
     return statement(rules)
 
-@ask.intent('GetTrashMan', mapping={'date':'Date'})
+@ask.intent('GetTrashMan', convert={'date':'date'})
 def trashquery(date):
     if date == None:
         day = datetime.now().day
     else:
-        day = datetime(date).day
+        day = date.day
     if 1 <= day <= 10:
         trash_man = 'Perret'
     elif 11 <= day <= 19:
