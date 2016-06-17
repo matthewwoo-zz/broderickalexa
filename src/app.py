@@ -11,11 +11,11 @@ def tellrules():
     return statement(rules)
 
 @ask.intent('GetTrashMan')
-def trashquery(date):
-    if date == None:
+def trashquery(Date):
+    if Date == None:
         day = datetime.now().day
     else:
-        day = datetime(date).day
+        day = datetime(Date).day
     if 1 <= day <= 10:
         trash_man = 'Perret'
     elif 11 <= day <= 19:
