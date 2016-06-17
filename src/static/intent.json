@@ -1,0 +1,17 @@
+{
+    "intents": [
+      {
+    "intent": "GetRules"
+      },
+      {
+        "intent": "GetTrashMan",
+        "slots": [
+          {
+            "name": "Date",
+            "type": "AMAZON.DATE"
+          }
+        ]
+      }
+    ]
+  }
+
