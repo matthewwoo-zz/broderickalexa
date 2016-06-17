@@ -10,4 +10,4 @@ def rules():
     return statement("Yo")
 
 if __name__ == "__main__":
-    app.run(port=4990, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
