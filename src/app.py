@@ -17,11 +17,11 @@ def trashquery(date):
     else:
         day = date.day
     if 1 <= day <= 10:
-        trash_man = 'Perret'
+        trash_man = 'Perret is the trash man'
     elif 11 <= day <= 19:
-        trash_man= "Woo"
+        trash_man= 'Woo is the trash man'
     else:
-        trash_man = "Zhang"
+        trash_man = "Zhang is the trash man"
     return statement(trash_man)
 
 if __name__ == "__main__":
