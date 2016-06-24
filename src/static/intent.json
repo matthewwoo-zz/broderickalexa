@@ -1,17 +1,32 @@
 {
-    "intents": [
+    "intents":
+    [
       {
-    "intent": "GetRules"
+	    "intent": "GetRules"
       },
       {
         "intent": "GetTrashMan",
-        "slots": [
+        "slots":
+        [
           {
-            "name": "Date",
+            "name": "date",
             "type": "AMAZON.DATE"
           }
         ]
-      }
+      },
+     {
+       "intent":"GetRecord",
+       "slots":
+       [
+         { "name": "name",
+           "type": "LIST_OF_ROOMMATES"
+         },
+         {
+           "name":"mess",
+           "type":"LIST_OF_MESS"
+         }
+       ]
+     }
     ]
-  }
+}
 
