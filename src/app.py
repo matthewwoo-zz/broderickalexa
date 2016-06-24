@@ -28,7 +28,7 @@ def trashquery(date):
 def record():
     return statement("Got it")
 
-@ask.inten('GetTally')
+@ask.intent('GetTally')
 def charge():
     return statement("Got it")
 
