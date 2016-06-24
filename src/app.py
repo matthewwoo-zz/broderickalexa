@@ -26,12 +26,11 @@ def trashquery(date):
 
 @ask.intent('GetRecord')
 def record():
-
     return statement("Got it")
 
 @ask.inten('GetTally')
 def charge():
-    return statement()
+    return statement("Got it")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
