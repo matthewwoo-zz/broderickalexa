@@ -25,8 +25,8 @@ def trashquery(date):
     return statement(trash_man)
 
 @ask.intent('GetRecord')
-def record():
-    return statement("Got it")
+def record(name, location):
+    return statement("Got {} for mess in {}".format(name, location))
 
 @ask.intent('GetTally')
 def charge():
