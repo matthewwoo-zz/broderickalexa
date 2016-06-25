@@ -107,7 +107,7 @@ def tally(name):
     for row in values:
         if row[0] == name:
             return row[1]
-        return "Data not found"
+        return 0
 
 def record(date=datetime.now(), name="Perret", description="Mess in kitchen"):
     service = create_service()
