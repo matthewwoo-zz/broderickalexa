@@ -2,6 +2,7 @@ from flask import Flask
 from flask_ask import Ask, statement
 from src.static.rules import rules
 from datetime import datetime
+import src.sheets as gsheet
 
 app = Flask(__name__)
 ask = Ask(app, '/bot')
@@ -26,6 +27,8 @@ def trashquery(date):
 
 @ask.intent('GetRecord')
 def record(name, location):
+    description = "Mess in {}".format(location)
+    gsheet.record(name=name, description=description)
     return statement("Got {} for mess in {}".format(name, location))
 
 @ask.intent('GetTally')

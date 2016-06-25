@@ -8,6 +8,7 @@ from flask import json
 from oauth2client import client
 from oauth2client import tools
 from datetime import datetime
+import src.constants as constants
 
 try:
     import argparse
@@ -15,10 +16,10 @@ try:
 except ImportError:
     flags = None
 
-SCOPES = 'https://www.googleapis.com/auth/spreadsheets'
-CLIENT_SECRET_FILE = 'client_secret.json'
-APPLICATION_NAME = 'Broderick Test'
-spreadsheetId = '1Wmt5qXKHMpnpVT7NS6-ZmfxNf4opRz6b3CKl2dRXZU8'
+SCOPES = constants.SCOPES
+CLIENT_SECRET_FILE = constants.CLIENT_SECRET_FILE
+APPLICATION_NAME = constants.APPLICATION_NAME
+spreadsheetId = constants.SPREADSHEET_ID
 
 
 def get_credentials():
@@ -94,6 +95,19 @@ def num_row(service,rangeName):
         print('No data found.')
     return row_num
 
+def tally_all():
+    pass
+
+def tally(name):
+    service = create_service()
+    rangeName = 'Owed!A2:E'
+    result = service.spreadsheets().values().get(
+        spreadsheetId=spreadsheetId, range=rangeName).execute()
+    values = result.get('values', [])
+    for row in values:
+        if row[0] == name:
+            return row[1]
+        return "Data not found"
 
 def record(date=datetime.now(), name="Perret", description="Mess in kitchen"):
     service = create_service()
@@ -110,5 +124,4 @@ def record(date=datetime.now(), name="Perret", description="Mess in kitchen"):
 
     write.update()
 
-d
 
