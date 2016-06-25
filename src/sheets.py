@@ -16,10 +16,16 @@ try:
 except ImportError:
     flags = None
 
-SCOPES = constants.SCOPES
-CLIENT_SECRET_FILE = constants.CLIENT_SECRET_FILE
-APPLICATION_NAME = constants.APPLICATION_NAME
-spreadsheetId = constants.SPREADSHEET_ID
+# SCOPES = constants.SCOPES
+# CLIENT_SECRET_FILE = constants.CLIENT_SECRET_FILE
+# APPLICATION_NAME = constants.APPLICATION_NAME
+# spreadsheetId = constants.SPREADSHEET_ID
+
+SCOPES = 'https://www.googleapis.com/auth/spreadsheets'
+CLIENT_SECRET_FILE = 'client_secret.json'
+APPLICATION_NAME = 'Broderick Test'
+spreadsheetId = '1Wmt5qXKHMpnpVT7NS6-ZmfxNf4opRz6b3CKl2dRXZU8'
+
 
 
 def get_credentials():
