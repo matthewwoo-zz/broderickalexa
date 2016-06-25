@@ -8,11 +8,11 @@ app = Flask(__name__)
 ask = Ask(app, '/bot')
 
 @ask.intent('GetRules')
-def tellrules():
+def tell_rules():
     return statement(rules)
 
 @ask.intent('GetTrashMan', convert={'date':'date'})
-def trashquery(date):
+def trash_query(date):
     if date == None:
         day = datetime.now().day
     else:
@@ -37,4 +37,4 @@ def charge(name):
     return statement("{} owes {}".format(name,amt))
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
